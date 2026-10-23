@@ -14,6 +14,14 @@
 
     //Esercizi 3
     $numeri = [3, 8, 15, 22, 7, 10, 41, 64, 5, 18];
+    $pari = [];
+
+    foreach($numeri as $num){
+        if($num % 2 == 0){
+            $pari[] = $num;
+        }
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,7 +76,25 @@
         </div>
         <div>
             <h1>Esercizio 3</h1>
+            <p>Numeri pari (foreach): 
+                <?php foreach($numeri as $num){
+                    if($num % 2 == 0){
+                        echo($num);
+                        echo(" ");}}
+                ?> 
+            </p>
+
+            <p>Numeri pari (for): 
+                <?php for($i = 0; $i < count($numeri); $i++){
+                    if($numeri[$i] % 2 == 0){
+                        echo($numeri[$i]);
+                        echo(" ");}}
+                ?> 
+            </p>
             
+            <pre> <?php print_r($pari) ?> </pre>
+            <p>Numeri pari: <?php echo(count($pari))?></p>
+            <p>Numeri dispari: <?php echo(count($numeri) - count($pari))?></p>
         </div>
     </main>
 </body>
